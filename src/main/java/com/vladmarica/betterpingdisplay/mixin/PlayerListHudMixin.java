@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class PlayerListHudMixin {
 	@Unique
 	@Final
-	private static final int PLAYER_SLOT_EXTRA_WIDTH = 45;
+	private static final int PLAYER_SLOT_EXTRA_WIDTH = 35;
 
 	@Shadow
 	@Final

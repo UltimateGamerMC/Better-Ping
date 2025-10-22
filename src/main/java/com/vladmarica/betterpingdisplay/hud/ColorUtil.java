@@ -8,15 +8,22 @@ public final class ColorUtil {
       throw new IllegalArgumentException("Offset must be between 0.0 and 1.0");
     }
 
+    int alphaDiff = getAlpha(colorEnd) - getAlpha(colorStart);
     int redDiff = getRed(colorEnd) - getRed(colorStart);
     int greenDiff = getGreen(colorEnd) - getGreen(colorStart);
     int blueDiff = getBlue(colorEnd) - getBlue(colorStart);
 
+    int newAlpha = Math.round(getAlpha(colorStart) + (alphaDiff * offset));
     int newRed = Math.round(getRed(colorStart) + (redDiff * offset));
     int newGreen = Math.round(getGreen(colorStart) + (greenDiff * offset));
     int newBlue = Math.round(getBlue(colorStart) + (blueDiff * offset));
 
-    return (newRed << 16) | (newGreen << 8) | newBlue;
+    return (newAlpha << 24) | (newRed << 16) | (newGreen << 8) | newBlue;
+  }
+
+  @VisibleForTesting
+  static int getAlpha(int color) {
+    return (color >> 24) & 0xFF;
   }
 
   @VisibleForTesting

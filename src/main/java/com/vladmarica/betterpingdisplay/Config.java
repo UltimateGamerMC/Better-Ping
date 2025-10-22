@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 public class Config {
-  private static final int DEFAULT_PING_TEXT_COLOR = 0xA0A0A0;
+  private static final int DEFAULT_PING_TEXT_COLOR = 0xFFA0A0A0;
   private static final String DEFAULT_PING_TEXT_FORMAT = "%dms";
 
   private final boolean autoColorPingText;
@@ -21,7 +21,8 @@ public class Config {
   public Config(ConfigData configFileFormat) {
     if (configFileFormat.pingTextColor.startsWith("#")) {
       try {
-        textColor = Integer.parseInt(configFileFormat.pingTextColor.substring(1), 16);
+        int hexColor = Integer.parseInt(configFileFormat.pingTextColor.substring(1), 16);
+        textColor = (0xFF000000) | hexColor;
       }
       catch (NumberFormatException ex) {
         BetterPingDisplayMod.LOGGER.error("Config option 'pingTextColor' is invalid - it must be a hex color code");

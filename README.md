@@ -1,34 +1,35 @@
-# Better Ping Display - Fabric Edition
+# Better Ping
 
-[![](https://img.shields.io/curseforge/dt/406343?style=for-the-badge&logo=curseforge&label=Downloads&color=rgb(241%2C%20100%2C%2054))](https://www.curseforge.com/minecraft/mc-mods/better-ping-display-fabric) [![](https://img.shields.io/modrinth/dt/better-ping-display-fabric?style=for-the-badge&logo=modrinth&logoColor=rgb(27%2C%20217%2C%20106)&label=Downloads&color=rgb(27%2C%20217%2C%20106))](https://modrinth.com/mod/better-ping-display-fabric)
+**A continuation of the beloved Better Ping Display mod, updated and maintained for modern Minecraft.**
 
+This client-side Fabric mod replaces Minecraft's ambiguous ping bars with actual numerical values, so you always know your exact connection quality at a glance.
 
-A [Fabric](https://fabricmc.net/) mod for Minecraft to display each player's ping in the player list as a number.
+## Features
 
-Go [**here**](https://github.com/vladmarica/better-ping-display) for the Forge/NeoForge edition of this mod.
+- **See Your Real Ping** - Exact millisecond values instead of vague signal bars
+- **Smart Color Coding** - Automatic color-coding based on latency (green = smooth, red = laggy)
+- **Fully Customizable** - Adjust colors, text format, and display preferences to match your style
+- **Works Everywhere** - Client-side only, so it works on any server including vanilla
+- **Zero Bloat** - Simple, focused, and lightweight
 
-![](https://vladmarica.com/assets/minecraft/better-ping-display.png)
+## Why This Mod?
 
-This is a client-side mod. The server doesn't need to have it installed. It works even when playing on vanilla servers.
+The original Better Ping Display was abandoned, leaving players without support for newer versions. Better Ping continues that legacy, keeping the mod alive and compatible with the latest Minecraft releases while staying true to its core purpose: giving you clear visibility of your connection.
 
-## Configuration
-This mod's config file is `betterpingdisplay.json`. It contains the following options:
+## Easy Configuration
 
-| Option  | Default Value  | Description  |
-|---|---|---|
-| autoColorPingText  | `true` | Whether to color a player's ping based on their latency. E.g, low latency = green, high latency = red |
-| renderPingBars  | `false` | Whether to also draw the default Minecraft ping bars  |
-| pingTextColor  | `#A0A0A0`  | The ping text color to use. Only works whens `autoColorPingText` is false |
-| pingTextFormatString | `%dms` | The format string for ping text. Must include a `%d`, which will be replaced dynamically by the actual ping value.
+Customize everything through `betterpingdisplay.json`:
+- Toggle automatic color-coding
+- Show or hide original ping bars
+- Set custom text colors
+- Define your own format (e.g., `%dms`, `%d ping`)
 
-## Supported Minecraft Versions
-* **1.15.x**
-* **1.16.x**
-* **1.17.x**
-* **1.18.x**
-* **1.19.x**
-* **1.20.x**
-* **1.21.x**
+## Supported Versions
 
-## Requirements
-* [Fabric](https://fabricmc.net/)
+1.21.9+1.21.10
+
+**Original Mod:** [Better Ping Display - Fabric](https://modrinth.com/mod/better-ping-display-fabric)
+
+---
+
+*Requires [Fabric Loader](https://fabricmc.net/) and Fabric API*
